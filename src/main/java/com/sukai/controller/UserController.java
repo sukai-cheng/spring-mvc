@@ -31,6 +31,6 @@ public class UserController {
     @ResponseBody
     public ResponseResult<User> getAllUser() {
         User user = userService.findByUserName("admin");
-        return new ResponseResult<User>(200, "操作成功", user);
+        return new ResponseResult<>(200, "操作成功", user);
     }
 }
