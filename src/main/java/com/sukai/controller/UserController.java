@@ -24,13 +24,12 @@ public class UserController {
     public User findByUserName(@RequestBody UserVo userVo, Model model) {
         User user = userService.findByUserName(userVo.getUsername());
         model.addAttribute("user", user);
-
         return user;
     }
 
     @RequestMapping(value = "/getAllUser", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseResult getAllUser() {
+    public ResponseResult<User> getAllUser() {
         User user = userService.findByUserName("admin");
         return new ResponseResult<User>(200, "操作成功", user);
     }
