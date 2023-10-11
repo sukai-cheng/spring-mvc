@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 /**
  * @author chengsukai
  */
@@ -29,8 +31,8 @@ public class UserController {
 
     @RequestMapping(value = "/getAllUser", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseResult<User> getAllUser() {
-        User user = userService.findByUserName("admin");
-        return new ResponseResult<>(200, "操作成功", user);
+    public ResponseResult<List<User>> getAllUser() {
+        List<User> userList = userService.findAllUsers();
+        return new ResponseResult<>(200, "操作成功", userList);
     }
 }

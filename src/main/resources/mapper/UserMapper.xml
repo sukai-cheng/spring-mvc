@@ -5,4 +5,8 @@
     <select id="findByUserName" resultType="com.sukai.entity.User">
         select * from user u where u.user_name = #{userName,jdbcType=VARCHAR}
     </select>
+
+    <select id="selectAll" resultType="com.sukai.entity.User">
+        select * from User u;
+    </select>
 </mapper>

@@ -17,7 +17,7 @@ public class test {
 
     @Test
     public void testUserService(){
-        User user = userService.findByUserName("admin");
+        User user = userService.findByUserName("slave");
         System.out.println(user.getUserName());
     }
 }
