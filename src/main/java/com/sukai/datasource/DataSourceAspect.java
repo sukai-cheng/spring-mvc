@@ -14,7 +14,7 @@ public class DataSourceAspect {
     /**
      * 拦截数据源的标识,并设置到线程存储中,用于后续切换
      *
-     * @param joinPoint
+     * @param joinPoint 切点
      */
     public void intercept(JoinPoint joinPoint) {
         //获取切入点的类反射
@@ -31,8 +31,8 @@ public class DataSourceAspect {
     /**
      * 提取目标对象方法注解和注解中的数据源标识
      *
-     * @param clazz
-     * @param method
+     * @param clazz 类对象
+     * @param method 方法
      */
     private void dealDataSource(Class<?> clazz, Method method) {
         try {
@@ -48,7 +48,7 @@ public class DataSourceAspect {
             }
             //方法注解,可以覆盖类型注解
             Method m = clazz.getMethod(method.getName(), paramTypeArr);
-            if (m != null && m.isAnnotationPresent(DataSource.class)) {
+            if (m.isAnnotationPresent(DataSource.class)) {
                 DataSource dataSource = m.getAnnotation(DataSource.class);
                 DataSourceContextHolder.setDataSource(dataSource.value());
             }else{

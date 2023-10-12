@@ -5,9 +5,8 @@ import com.mysql.cj.util.StringUtils;
 import lombok.extern.java.Log;
 
 /**
- * 数据库选择工具
- *
- * @author: lzx
+ * 数据库切换工具
+ * @author chengsukai
  */
 @Log
 public class DataSourceContextHolder {
@@ -17,7 +16,7 @@ public class DataSourceContextHolder {
     /**
      * 设置数据源
      *
-     * @param dataSource
+     * @param dataSource 数据源
      */
     public static void setDataSource(String dataSource) {
         log.info("--set-ds---{}" + dataSource);

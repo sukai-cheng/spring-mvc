@@ -19,9 +19,9 @@ import java.lang.annotation.*;
 @Inherited
 @Documented
 public @interface DataSource {
-    public static String MASTER = "master";
+    String MASTER = "master";
 
-    public static String SLAVE = "slave";
+    String SLAVE = "slave";
 
     String value() default DataSource.MASTER;
 }
