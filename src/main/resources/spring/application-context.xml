@@ -13,7 +13,8 @@
     <import resource="classpath:/spring/spring-dao.xml"/>
     <import resource="classpath:/spring/spring-service.xml"/>
     <import resource="classpath:/spring/spring-mvc.xml"/>
-
+    <import resource="classpath:/spring/redis-config.xml"/>
+    <import resource="classpath:/spring/spring-web.xml"/>
 
     <!-- 自定义切入点 -->
     <bean id="dataSourceAspect" class="com.sukai.datasource.DataSourceAspect"/>
