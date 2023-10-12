@@ -1,6 +1,7 @@
 package com.sukai.datasource;
 
 
+import com.mysql.cj.util.StringUtils;
 import lombok.extern.java.Log;
 
 /**
@@ -25,6 +26,9 @@ public class DataSourceContextHolder {
 
     public static String getDataSource() {
         String dataSource = ((String) dataSourceContextHolder.get());
+        if(StringUtils.isNullOrEmpty(dataSource)){
+            dataSource = "master";
+        }
         log.info("--get-ds---{}" + dataSource);
         return dataSource;
     }
