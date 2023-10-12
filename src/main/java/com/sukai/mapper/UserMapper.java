@@ -12,4 +12,6 @@ public interface UserMapper {
     User findByUserName(@Param("userName") String userName);
 
     List<User> selectAll();
+
+    boolean addUser(@Param("user") User user);
 }

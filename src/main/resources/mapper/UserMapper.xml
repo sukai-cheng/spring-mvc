@@ -9,4 +9,9 @@
     <select id="selectAll" resultType="com.sukai.entity.User">
         select * from User u;
     </select>
+
+    <insert id="addUser">
+        INSERT INTO mes.user (user_name, pass_word)
+        VALUES (#{user.userName},#{user.passWord})
+    </insert>
 </mapper>
