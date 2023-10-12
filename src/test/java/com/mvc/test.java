@@ -1,7 +1,7 @@
 package com.mvc;
 
 import com.sukai.entity.User;
-import com.sukai.service.impl.UserServiceImpl;
+import com.sukai.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class test {
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
     @Test
     public void testUserService(){

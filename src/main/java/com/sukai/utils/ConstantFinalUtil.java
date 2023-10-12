@@ -1,9 +1,6 @@
 package com.sukai.utils;
 
 
-import com.sun.org.slf4j.internal.LoggerFactory;
-import lombok.extern.java.Log;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -17,7 +14,6 @@ import java.util.concurrent.Executors;
  * */
 public class ConstantFinalUtil
 {
-//	public static final Logger loggerMsg = LoggerFactory.getLogger(ConstantFinalUtil.class);
 	// 获取properties属性文件信息,只需获取属性文件名称即可
 	public static ResourceBundle BUNDLE = ResourceBundle.getBundle("common");
 	// 全部随机字符的字母表
