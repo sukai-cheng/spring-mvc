@@ -1,9 +1,11 @@
 package com.sukai.entity;
 
+import java.io.Serializable;
+
 /**
  * @author chengsukai
  */
-public class User {
+public class User implements Serializable {
     Long userId;
 
     String userName;
