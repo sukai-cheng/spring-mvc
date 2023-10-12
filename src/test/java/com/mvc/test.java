@@ -3,6 +3,7 @@ package com.mvc;
 import com.sukai.datasource.DataSource;
 import com.sukai.entity.User;
 import com.sukai.service.UserService;
+import lombok.Data;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +25,12 @@ public class test {
     }
 
     @Test
+    @DataSource
     @Transactional
     public void createUser() {
         User user = new User();
         user.setUserName("boss");
         user.setPassWord("123");
         userService.addUser(user);
-        int res = 1 / 0;
     }
 }

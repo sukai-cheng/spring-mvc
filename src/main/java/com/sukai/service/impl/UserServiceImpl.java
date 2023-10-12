@@ -6,6 +6,7 @@ import com.sukai.mapper.UserMapper;
 import com.sukai.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -31,7 +32,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean addUser(User user){
+    @DataSource(value = DataSource.SLAVE)
+    public Boolean addUser(User user) {
         return userMapper.addUser(user);
     }
 }
