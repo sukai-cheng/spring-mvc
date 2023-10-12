@@ -5,6 +5,10 @@ import org.aspectj.lang.reflect.MethodSignature;
 
 import java.lang.reflect.Method;
 
+/**
+ * 数据源切面
+ * @author chengsukai
+ */
 public class DataSourceAspect {
 
     /**
@@ -34,17 +38,21 @@ public class DataSourceAspect {
         try {
             //获取方法参数
             Class<?>[] paramTypeArr = method.getParameterTypes();
-            //检查是否为MDataSource注解
+            //检查是否为DataSource注解
             if (clazz.isAnnotationPresent(DataSource.class)) {
                 //获取注解对象
                 DataSource dataSource = clazz.getAnnotation(DataSource.class);
                 DataSourceContextHolder.setDataSource(dataSource.value());
+            }else{
+                DataSourceContextHolder.setDataSource("master");
             }
             //方法注解,可以覆盖类型注解
             Method m = clazz.getMethod(method.getName(), paramTypeArr);
             if (m != null && m.isAnnotationPresent(DataSource.class)) {
                 DataSource dataSource = m.getAnnotation(DataSource.class);
                 DataSourceContextHolder.setDataSource(dataSource.value());
+            }else{
+                DataSourceContextHolder.setDataSource("master");
             }
         } catch (Exception e) {
             System.out.println(clazz + ":" + e.getMessage());
