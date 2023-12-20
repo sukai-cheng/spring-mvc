@@ -29,6 +29,13 @@ public class UserController {
         return user;
     }
 
+    @RequestMapping("/user")
+    public String user(Model model){
+        User user = userService.findByUserName("chengsukai");
+        model.addAttribute("user",user);
+        return "user";
+    }
+
     @RequestMapping(value = "/getAllUser", method = RequestMethod.GET)
     @ResponseBody
     public ResponseResult<List<User>> getAllUser() {
